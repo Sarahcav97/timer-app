@@ -2,26 +2,30 @@ var timerBtn = document.getElementById('timerBtn');
 var timerInput = document.getElementById('timer');
 var timeAmount = timerInput.value;
 var containerDiv = document.getElementById('newDiv');
+var timerDiv = document.getElementById('timerSpace');
 
 function displayTime() {
 	var div = document.createElement('div');
-	document.body.innerHTML = ''; // clear line each time
-	document.body.appendChild(div); //putting on the page
+	timerDiv.innerHTML = ''; // clear line each time
+	timerDiv.appendChild(div); //putting on the page
 	div.innerHTML = timerInput.value; //the text (innerHTML) is showing the time remaining on the screen
 
-	console.log(timerInput.value);
+	//console.log(timerInput.value);
 }
-function displayPic() {
-	surprisePic = document.getElementById('myPic').display('block');
-	containerDiv.appendChild(surprisePic);
-}
+
 function startCountdown() {
-	setInterval(function () {
+	var timer = setInterval(function () {
+		console.log(timerInput.value);
 		timerInput.value--; //subtract 1 each second
-		displayTime(); //showing remaining time after subtractions
-		if (timerInput.value === 0) {
-			displayPic(); // stop counting down (stops at 0)
-		}
+		if (timerInput.value >= 0) {
+			displayTime(); //showing remaining time after subtractions
+		} else {
+			clearInterval(timer);
+			document.body.innerHTML = '';
+			var done = document.createElement('h1');
+			done.innerHTML = 'Finished!';
+			document.body.appendChild(done);
+		} // stop counting down (stops at 0)
 	}, 1000); // countdown by 1 millisecond intervals
 }
 
