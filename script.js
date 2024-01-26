@@ -24,6 +24,7 @@ function startCountdown() {
 			document.body.innerHTML = '';
 			var done = document.createElement('h1');
 			done.innerHTML = 'Finished!';
+			done.setAttribute('id', 'finishedScreen');
 			document.body.appendChild(done);
 		} // stop counting down (stops at 0)
 	}, 1000); // countdown by 1 millisecond intervals
