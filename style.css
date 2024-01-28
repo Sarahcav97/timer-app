@@ -40,3 +40,12 @@
 	border: solid black 3px;
 	padding: 70px;
 }
+#timeDivvy {
+	font-size: 30px;
+
+	height: 40px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
