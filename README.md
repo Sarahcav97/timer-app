@@ -6,10 +6,6 @@
 ## Description
 A simple timer app.
 
-## Screenshots
-[app screenshot](./assets/screenshot1.png)
-
-
 ## Questions
 [Link to GitHub Profile](https://www.github.com/sarahCav97)
 
